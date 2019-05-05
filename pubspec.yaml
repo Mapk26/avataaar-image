@@ -1,0 +1,19 @@
+name: avataaar_image
+description: Flutter wrapper widget for Avataaars API.
+version: 1.0.0
+author: Tomasz Wyrowinski <tomwyr@hotmail.com>
+homepage: https://github.com/tomwyr/avataaar-image/
+
+environment:
+  sdk: ">=2.2.2 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cached_network_image: ^0.7.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+flutter:
