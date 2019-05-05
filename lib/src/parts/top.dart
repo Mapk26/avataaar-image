@@ -24,8 +24,7 @@ class Top implements AvataaarPart {
         accessoriesType,
         hatColor,
         hairColor,
-        ...(facialHair?.pieces ?? [])
-      ];
+      ]..addAll(facialHair?.pieces ?? []);
 
   static Top noHair({AccessoriesType accessoriesType, FacialHair facialHair}) =>
       Top._(
