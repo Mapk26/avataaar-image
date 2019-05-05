@@ -59,3 +59,7 @@ AvataaarImage.builder(
   },
 )
 ```
+
+### Persisting avatars
+
+Use `Avataaar.toJson()` and `Avataaar.fromJson(String)` methods to serialize/deserialize avatars.
