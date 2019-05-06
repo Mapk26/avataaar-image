@@ -59,6 +59,27 @@ class Avataaar implements AvataaarPart {
 
   static Avataaar fromJson(String value) =>
       AvataaarConverter().fromMap(json.decode(value));
+  
+   Avataaar copyWith({
+    Top top,
+    Clothes clothes,
+    Eyes eyes,
+    Eyebrow eyebrow,
+    Mouth mouth,
+    Skin skin,
+    Style style,
+  }){
+  return Avataaar(
+    top: top ?? Top.random,
+    clothes: clothes ?? Clothes.random,
+    eyes: eyes ?? Eyes.random,
+    eyebrow: eyebrow ?? Eyebrow.random,
+    mouth: mouth ?? Mouth.random,
+    skin: skin ?? Skin.random,
+    style: style ?? Style.random,
+  );
+  }
+  
 }
 
 class AvataaarConverter extends Converter<Avataaar> {
