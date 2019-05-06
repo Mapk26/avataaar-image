@@ -70,13 +70,13 @@ class Avataaar implements AvataaarPart {
     Style style,
   }){
   return Avataaar(
-    top: top ?? Top.random,
-    clothes: clothes ?? Clothes.random,
-    eyes: eyes ?? Eyes.random,
-    eyebrow: eyebrow ?? Eyebrow.random,
-    mouth: mouth ?? Mouth.random,
-    skin: skin ?? Skin.random,
-    style: style ?? Style.random,
+    top: top ?? this.top,
+    clothes: clothes ?? this.clothes,
+    eyes: eyes ?? this.eyes,
+    eyebrow: eyebrow ?? this.eyebrow,
+    mouth: mouth ?? this.mouth,
+    skin: skin ?? this.skin,
+    style: style ?? this.style,
   );
   }
   
