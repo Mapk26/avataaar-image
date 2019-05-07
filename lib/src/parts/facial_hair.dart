@@ -13,22 +13,38 @@ class FacialHair implements AvataaarPart {
 
   static FacialHair get blank =>
       FacialHair._(facialHairType: FacialHairType.Blank);
+
   static FacialHair beardMedium({FacialHairColor facialHairColor}) =>
       FacialHair._(
           facialHairType: FacialHairType.BeardMedium,
           facialHairColor: facialHairColor);
+
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is FacialHair &&
+          runtimeType == other.runtimeType &&
+          facialHairType == other.facialHairType &&
+          facialHairColor == other.facialHairColor;
+
+  @override
+  int get hashCode => facialHairType.hashCode ^ facialHairColor.hashCode;
+
   static FacialHair beardLight({FacialHairColor facialHairColor}) =>
       FacialHair._(
           facialHairType: FacialHairType.BeardLight,
           facialHairColor: facialHairColor);
+
   static FacialHair beardMagestic({FacialHairColor facialHairColor}) =>
       FacialHair._(
           facialHairType: FacialHairType.BeardMagestic,
           facialHairColor: facialHairColor);
+
   static FacialHair moustacheFancy({FacialHairColor facialHairColor}) =>
       FacialHair._(
           facialHairType: FacialHairType.MoustacheFancy,
           facialHairColor: facialHairColor);
+
   static FacialHair moustacheMagnum({FacialHairColor facialHairColor}) =>
       FacialHair._(
           facialHairType: FacialHairType.MoustacheMagnum,

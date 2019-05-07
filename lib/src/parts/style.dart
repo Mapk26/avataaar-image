@@ -10,7 +10,18 @@ class Style implements AvataaarPart {
   @override
   List get pieces => [avatarStyle];
 
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is Style &&
+          runtimeType == other.runtimeType &&
+          avatarStyle == other.avatarStyle;
+
+  @override
+  int get hashCode => avatarStyle.hashCode;
+
   static Style get circle => Style._(avatarStyle: AvatarStyle.Circle);
+
   static Style get transparent => Style._(avatarStyle: AvatarStyle.Transparent);
 
   static Style get random {

@@ -26,6 +26,25 @@ class Top implements AvataaarPart {
         hairColor,
       ]..addAll(facialHair?.pieces ?? []);
 
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is Top &&
+          runtimeType == other.runtimeType &&
+          topType == other.topType &&
+          accessoriesType == other.accessoriesType &&
+          hatColor == other.hatColor &&
+          hairColor == other.hairColor &&
+          facialHair == other.facialHair;
+
+  @override
+  int get hashCode =>
+      topType.hashCode ^
+      accessoriesType.hashCode ^
+      hatColor.hashCode ^
+      hairColor.hashCode ^
+      facialHair.hashCode;
+
   static Top noHair({AccessoriesType accessoriesType, FacialHair facialHair}) =>
       Top._(
           topType: TopType.NoHair,

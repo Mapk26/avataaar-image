@@ -59,8 +59,8 @@ class Avataaar implements AvataaarPart {
 
   static Avataaar fromJson(String value) =>
       AvataaarConverter().fromMap(json.decode(value));
-  
-   Avataaar copyWith({
+
+  Avataaar copyWith({
     Top top,
     Clothes clothes,
     Eyes eyes,
@@ -68,18 +68,39 @@ class Avataaar implements AvataaarPart {
     Mouth mouth,
     Skin skin,
     Style style,
-  }){
-  return Avataaar(
-    top: top ?? this.top,
-    clothes: clothes ?? this.clothes,
-    eyes: eyes ?? this.eyes,
-    eyebrow: eyebrow ?? this.eyebrow,
-    mouth: mouth ?? this.mouth,
-    skin: skin ?? this.skin,
-    style: style ?? this.style,
-  );
-  }
-  
+  }) =>
+      Avataaar(
+        top: top ?? this.top,
+        clothes: clothes ?? this.clothes,
+        eyes: eyes ?? this.eyes,
+        eyebrow: eyebrow ?? this.eyebrow,
+        mouth: mouth ?? this.mouth,
+        skin: skin ?? this.skin,
+        style: style ?? this.style,
+      );
+
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is Avataaar &&
+          runtimeType == other.runtimeType &&
+          top == other.top &&
+          clothes == other.clothes &&
+          eyes == other.eyes &&
+          eyebrow == other.eyebrow &&
+          mouth == other.mouth &&
+          skin == other.skin &&
+          style == other.style;
+
+  @override
+  int get hashCode =>
+      top.hashCode ^
+      clothes.hashCode ^
+      eyes.hashCode ^
+      eyebrow.hashCode ^
+      mouth.hashCode ^
+      skin.hashCode ^
+      style.hashCode;
 }
 
 class AvataaarConverter extends Converter<Avataaar> {

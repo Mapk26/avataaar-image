@@ -10,12 +10,28 @@ class Skin implements AvataaarPart {
   @override
   List get pieces => [skinColor];
 
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is Skin &&
+          runtimeType == other.runtimeType &&
+          skinColor == other.skinColor;
+
+  @override
+  int get hashCode => skinColor.hashCode;
+
   static Skin get tanned => Skin._(skinColor: SkinColor.Tanned);
+
   static Skin get yellow => Skin._(skinColor: SkinColor.Yellow);
+
   static Skin get pale => Skin._(skinColor: SkinColor.Pale);
+
   static Skin get light => Skin._(skinColor: SkinColor.Light);
+
   static Skin get brown => Skin._(skinColor: SkinColor.Brown);
+
   static Skin get darkBrown => Skin._(skinColor: SkinColor.DarkBrown);
+
   static Skin get black => Skin._(skinColor: SkinColor.Black);
 
   static Skin get random => Skin._(skinColor: randomPiece(SkinColor.values));

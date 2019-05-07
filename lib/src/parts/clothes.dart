@@ -12,26 +12,47 @@ class Clothes implements AvataaarPart {
   @override
   List get pieces => [clotheType, clotheColor, graphicType];
 
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is Clothes &&
+          runtimeType == other.runtimeType &&
+          clotheType == other.clotheType &&
+          clotheColor == other.clotheColor &&
+          graphicType == other.graphicType;
+
+  @override
+  int get hashCode =>
+      clotheType.hashCode ^ clotheColor.hashCode ^ graphicType.hashCode;
+
   static Clothes get blazerShirt =>
       Clothes._(clotheType: ClotheType.BlazerShirt);
+
   static Clothes get blazerSweater =>
       Clothes._(clotheType: ClotheType.BlazerSweater);
+
   static Clothes collarSweater(ClotheColor clotheColor) =>
       Clothes._(clotheType: ClotheType.CollarSweater, clotheColor: clotheColor);
+
   static Clothes graphicShirt(
           ClotheColor clotheColor, GraphicType graphicType) =>
       Clothes._(
           clotheType: ClotheType.GraphicShirt,
           clotheColor: clotheColor,
           graphicType: graphicType);
+
   static Clothes hoodie(ClotheColor clotheColor) =>
       Clothes._(clotheType: ClotheType.Hoodie, clotheColor: clotheColor);
+
   static Clothes overall(ClotheColor clotheColor) =>
       Clothes._(clotheType: ClotheType.Overall, clotheColor: clotheColor);
+
   static Clothes shirtCrewNeck(ClotheColor clotheColor) =>
       Clothes._(clotheType: ClotheType.ShirtCrewNeck, clotheColor: clotheColor);
+
   static Clothes shirtScoopNeck(ClotheColor clotheColor) => Clothes._(
       clotheType: ClotheType.ShirtScoopNeck, clotheColor: clotheColor);
+
   static Clothes shirtVNeck(ClotheColor clotheColor) =>
       Clothes._(clotheType: ClotheType.ShirtVNeck, clotheColor: clotheColor);
 
