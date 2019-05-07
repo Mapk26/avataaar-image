@@ -1,6 +1,6 @@
 name: avataaar_image
 description: Flutter wrapper widget for Avataaars API allowing to generate and display avatar images.
-version: 1.0.2
+version: 1.0.3
 author: Tomasz Wyrowinski <tomwyr@hotmail.com>
 homepage: https://github.com/tomwyr/avataaar-image/
 
