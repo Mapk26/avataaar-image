@@ -4,7 +4,7 @@ abstract class Converter<T> {
 
   T enumFromJson<T>(List<T> values, String json) => json != null
       ? values.firstWhere(
-          (it) => '$it'.toLowerCase() == '$T.$json'.toLowerCase(),
+          (it) => '$it'.split(".")[1].toString().toLowerCase() == json.toLowerCase(),
           orElse: () => null)
       : null;
 
