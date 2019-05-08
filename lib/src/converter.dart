@@ -4,10 +4,10 @@ abstract class Converter<T> {
 
   T enumFromJson<T>(List<T> values, String json) => json != null
       ? values.firstWhere(
-          (it) => '$it'.split(".")[1].toString().toLowerCase() == json.toLowerCase(),
+          (it) => enumToJson(it).toLowerCase() == json.toLowerCase(),
           orElse: () => null)
       : null;
 
   String enumToJson<T>(T value) =>
-      value != null ? value.toString().split('\.')[1] : null;
+      value != null ? value.toString().split('.')[1] : null;
 }
