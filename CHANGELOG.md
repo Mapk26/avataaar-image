@@ -1,3 +1,7 @@
+## [1.0.4] - 08/05/19
+
+* Update cached_network_image to 0.8.0
+
 ## [1.0.3] - 07/05/19
 
 * Add copyWith and equals to Avataaar.
