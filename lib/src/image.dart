@@ -1,3 +1,4 @@
+import 'package:avataaar_image/src/api.dart';
 import 'package:avataaar_image/src/avataaar.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/widgets.dart';
@@ -37,17 +38,5 @@ class AvataaarImage extends StatelessWidget with AvataaarsApi {
             placeholder: placeholder != null ? (_, __) => placeholder : null,
             errorWidget: errorImage != null ? (_, __, ___) => errorImage : null,
           );
-  }
-}
-
-mixin AvataaarsApi {
-  static const _BASE_URL = 'https://avataaars.io';
-
-  String getUrl(Avataaar avatar, double width) {
-    final params = avatar.pieceEntries.map((it) {
-      final key = it.key[0].toLowerCase() + it.key.substring(1);
-      return '$key=${it.value}';
-    }).join('&');
-    return '$_BASE_URL/png/$width?$params';
   }
 }

@@ -63,3 +63,7 @@ AvataaarImage.builder(
 ### Persisting avatars
 
 Use `Avataaar.toJson()` and `Avataaar.fromJson(String)` methods to serialize/deserialize avatars.
+
+### Getting image bytes
+
+Instantiate `AvataaarsApi` object and use its `getImage` method or `getUrl` if you prefer to handle fetching the data on your own.
