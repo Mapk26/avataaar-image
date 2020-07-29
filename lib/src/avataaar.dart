@@ -2,9 +2,10 @@ import 'dart:convert' show json;
 
 import 'package:avataaar_image/src/converter.dart';
 
+import '../avataaar_image.dart';
 import 'parts/parts.dart';
 
-class Avataaar implements AvataaarPart {
+class Avataaar with AvataaarsApi implements AvataaarPart {
   Avataaar({
     this.top,
     this.clothes,
@@ -56,6 +57,8 @@ class Avataaar implements AvataaarPart {
   }
 
   String toJson() => json.encode(AvataaarConverter().toMap(this));
+
+  String toUrl({double width=800}) => getUrl(this, width);
 
   static Avataaar fromJson(String value) =>
       AvataaarConverter().fromMap(json.decode(value));
